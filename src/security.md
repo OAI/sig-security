@@ -34,7 +34,7 @@ Please note that as of 2020, the implicit flow is about to be deprecated by [OAu
 | <a name="security-scheme-oauth2-metadata-url"></a>oauth2MetadataUrl | `string` | `oauth2` | URL to the OAuth2 authorization server metadata [RFC8414](https://datatracker.ietf.org/doc/html/rfc8414). TLS is required. |
 | <a name="security-scheme-deprecated"></a>deprecated | `boolean` | Any | Declares this security scheme to be deprecated. Consumers SHOULD refrain from usage of the declared scheme. Default value is `false`. |
 
-This object MAY be extended with [Specification Extensions](#specification-extensions).
+This object MAY be extended with [Specification Extensions](https://spec.openapis.org/oas/latest.html#specification-extensions).
 
 #### Security Scheme Object Examples
 
@@ -94,7 +94,7 @@ Allows configuration of the supported OAuth Flows.
 | <a name="oauth-flows-authorization-code"></a>authorizationCode | [OAuth Flow Object](#oauth-flow-object) | Configuration for the OAuth Authorization Code flow. Previously called `accessCode` in OpenAPI 2.0. |
 | <a name="oauth-flows-device-authorization"></a>deviceAuthorization | [OAuth Flow Object](#oauth-flow-object) | Configuration for the OAuth Device Authorization flow. |
 
-This object MAY be extended with [Specification Extensions](#specification-extensions).
+This object MAY be extended with [Specification Extensions](https://spec.openapis.org/oas/latest.html#specification-extensions).
 
 ### OAuth Flow Object
 
@@ -110,7 +110,7 @@ Configuration details for a supported OAuth Flow
 | <a name="oauth-flow-refresh-url"></a>refreshUrl | `string` | `oauth2` | The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL. The OAuth2 standard requires the use of TLS. |
 | <a name="oauth-flow-scopes"></a>scopes | Map[`string`, `string`] | `oauth2` | **REQUIRED**. The available scopes for the OAuth2 security scheme. A map between the scope name and a short description for it. The map MAY be empty. |
 
-This object MAY be extended with [Specification Extensions](#specification-extensions).
+This object MAY be extended with [Specification Extensions](https://spec.openapis.org/oas/latest.html#specification-extensions).
 
 #### OAuth Flow Object Example
 
