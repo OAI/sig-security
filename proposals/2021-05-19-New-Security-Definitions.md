@@ -4,7 +4,7 @@
 
 | Tag | Value |
 | ---- | ---------------- |
-| Proposal | [2021-05-19-New-Security-Definitions](https://github.com/OAI/sig-security/blob/main/2021-05-19-New-Security-Definitions.md) |
+| Proposal | [2021-05-19-New-Security-Definitions](https://github.com/OAI/sig-security/blob/main/proposals/2021-05-19-New-Security-Definitions.md) |
 | Authors | [Jeremy Whitlock](https://github.com/whitlockjc) |
 | Review Manager | TBD |
 | Status | Proposal |
