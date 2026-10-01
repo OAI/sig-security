@@ -216,6 +216,14 @@ $defs:
         $ref: '#/$defs/specification-extensions'
         unevaluatedProperties: false
 
+  security-requirement:
+    $comment: https://spec.openapis.org/oas/v3.3#security-requirement-object
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: string
+
   specification-extensions:
     $comment: https://spec.openapis.org/oas/v3.3#specification-extensions
     patternProperties:
