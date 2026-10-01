@@ -1,11 +1,11 @@
-$id: 'https://spec.openapis.org/security/legacy/3.3/schema/WORK-IN-PROGRESS'
+$id: 'https://spec.openapis.org/security/1.0/legacy/3.3/schema/WORK-IN-PROGRESS'
 $schema: 'https://json-schema.org/draft/2020-12/schema'
 
 description: The description of OpenAPI legacy security Objects
 
 $defs:
   security-scheme:
-    $comment: https://spec.openapis.org/oas/v3.3#security-scheme-object
+    $comment: https://spec.openapis.org/security/v1.0#security-scheme-object
     type: object
     properties:
       type:
@@ -217,7 +217,7 @@ $defs:
         unevaluatedProperties: false
 
   security-requirement:
-    $comment: https://spec.openapis.org/oas/v3.3#security-requirement-object
+    $comment: https://spec.openapis.org/security/v1.0#security-requirement-object
     type: object
     additionalProperties:
       type: array
@@ -225,7 +225,7 @@ $defs:
         type: string
 
   specification-extensions:
-    $comment: https://spec.openapis.org/oas/v3.3#specification-extensions
+    $comment: https://spec.openapis.org/security/v1.0#specification-extensions
     patternProperties:
       '^x-': true
 
