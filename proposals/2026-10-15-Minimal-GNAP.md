@@ -56,9 +56,9 @@ are explained after the example:
 * Fully dynamic, where both the AS URI and the access string are
   discovered via `WWW-Authenticate`.
 * Static AS, dynamic access string, where the `WWW-Authenticate`
-  challenge needs to provide `access` but might omit `as\_uri`.
+  challenge needs to provide `access` but might omit `as_uri`.
 * Dynamic AS, static access, where the `WWW-Authenticate` challenge needs
-  to provide `as\_uri` but is expected to omit the `access` parameter.
+  to provide `as_uri` but is expected to omit the `access` parameter.
 * Fully static, where both the AS URI and the access string are
   provided in the OAD.
 
@@ -92,9 +92,9 @@ of this proposal.
 
 With RS-first usage, a request to a protected resource results in
 a `401 Unauthorized` response with a `WWW-Authenticate` that at least
-includes the `as\_uri` parameter that provides the grant request endpoint.
+includes the `as_uri` parameter that provides the grant request endpoint.
 Such a response MAY also include `access` and `referrer` parameters
-that, together with `as\_uri`, provide everything needed to request
+that, together with `as_uri`, provide everything needed to request
 authorization.
 
 It is possible for a request using statically configuerd GNAP
@@ -234,7 +234,7 @@ While a GNAP client also needs a public key to make grant requests, per
 
 Therefore, an OAD is not an appropriate place for client public keys.
 
-The other by-value client object fields are optional.  The `class\_id`
+The other by-value client object fields are optional.  The `class_id`
 field is optional and AS-defined.  It is similarly client-specific.
 The `display` field is used to display information to a Resource Owner,
 and the use case for including this in the OAD is not clear to me.
@@ -247,7 +247,7 @@ are analogous to OAuth 3 client IDs, which we also do not include in OADs.
 #### Grant request endpoint field name
 
 The `gnapAsUri` field was chosen to match the `WWW-Authenticate` challenge
-parameter `as\_uri`, using the OAS's established convention of treating
+parameter `as_uri`, using the OAS's established convention of treating
 acronyms like words for the purpose of camelCasing.
 
 The drawback is that in the OAS, "URI" usually refers to OAD URIs, while
@@ -258,7 +258,7 @@ as noted in the detailed design, there is already work that needs to
 be done to clarify this area for Security Scheme and OAuth Flow Objects.
 
 Alternatives coudl be based on the longer standard name returned in
-the response to an `OPTIONS` request, `grant\_request\_endpoint`.
+the response to an `OPTIONS` request, `grant_request_endpoint`.
 I considered `gnapGrantRequestEndpoint` (closest match),
 `gnapGrantRequestEndpointUrl` (match but follow our URL convention,
 which as noted above contradicts GNAP's usage), or `gnapGrantRequestUrl`
