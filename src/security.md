@@ -8,7 +8,7 @@
 
 ## Introduction
 
-TODO: Define the Security Specification.
+TODO: Introduce the Security Specification.
 
 ## Specification
 

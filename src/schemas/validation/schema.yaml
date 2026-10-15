@@ -229,9 +229,6 @@ $defs:
     patternProperties:
       '^x-': true
 
-        additionalProperties:
-          $ref: '#/$defs/example-or-reference'
-
   map-of-strings:
     type: object
     additionalProperties:
