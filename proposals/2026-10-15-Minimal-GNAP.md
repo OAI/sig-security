@@ -114,7 +114,7 @@ paragraph. I also moved much of the text out of the field table for
 the Security Requirement Object as it became far too long to be
 readable there.
 
-The resolution rules for a relative value of `gnapGrantRequestEndpointUrl`
+The resolution rules for a relative value of `gnapAsUri`
 are the same as for other Security Scheme URLs.  There is some ambiguity
 around this, but this will be resolved by addressing OAI/sig-security#31.
 
@@ -134,7 +134,7 @@ Please note that as of 2020, the implicit flow is about to be deprecated by OAut
 | Field Name | Type | Applies To | Description |
 | ---- | :----: | ---- | ---- |
 | <a name="security-scheme-type"></a>type | `string` | Any | **REQUIRED**. The type of the security scheme. Valid values are `"apiKey"`, `"http"`, `"mutualTLS"`, `"oauth2"`, `"openIdConnect"`, `"gnap"`. |
-| <a name="security-scheme-gnap-grant-request-endpoint-url"></a>grantRequestEndpointUrl | `string` | `gnap` | The URL of the Authorization Server's grant request endpoint.  Per [RFC9635] an HTTP `OPTIONS` request to this endpoint will provide additional configuration information. |
+| <a name="security-scheme-gnap-as-uri"></a>gnapAsUri | `string` | `gnap` | The URL of the Authorization Server's grant request endpoint.  Per [RFC9635] an HTTP `OPTIONS` request to this endpoint will provide additional configuration information. |
 
 ### Security Scheme Object Examples
 
@@ -148,7 +148,7 @@ type: gnap
 
 ```yaml
 type: gnap
-gnapGrantRequestEndpointUrl: https://as.example.com/grant
+gnapAsUri: https://as.example.com/grant
 ```
 
 ### Security Requirement Object
@@ -222,7 +222,7 @@ so configuration concerns will be addressed separately to span all
 three systems.  Such configuration enhancements are not necesary
 for GNAP to be useful.
 
-### Client identification
+#### Client identification
 
 While a GNAP client also needs a public key to make grant requests, per
 [Section 2.3 of RFC9635](https://www.rfc-editor.org/info/rfc9635/#section-2.3-9):
