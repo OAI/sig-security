@@ -240,7 +240,7 @@ The `display` field is used to display information to a Resource Owner,
 and the use case for including this in the OAD is not clear to me.
 
 By-reference (as opposed to by-value as mentioned in the quote) identifiers
-are analogous to OAuth 3 client IDs, which we also do not include in OADs.
+are analogous to OAuth 2 client IDs, which we also do not include in OADs.
 
 ### Bikeshedding
 
