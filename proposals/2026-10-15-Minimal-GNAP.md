@@ -36,7 +36,7 @@ Full disclosure: the author of this proposal is one of the grantees.
 
 Minimal GNAP support using access reference strings can be enabled
 by adding a Security Scheme Object `type: gnap` with an optional
-`gnapAsUri' field, and allowing GNAP access strings in the Security
+`gnapAsUri` field, and allowing GNAP access strings in the Security
 Requirement Object in place of OAuth scopes.
 
 Whether the endpoint is defined statically in `gnapAsUri` or discovered
