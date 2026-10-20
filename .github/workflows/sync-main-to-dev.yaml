@@ -1,0 +1,23 @@
+name: sync-main-to-dev
+
+# Create a PR to update dev with shared changes from main. The build-infra
+# action preserves paths listed in spec.config.json release.removeOnReleaseBranch.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  sync-branch:
+    if: github.repository == 'OAI/sig-security'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Synchronize dev with main
+        uses: OAI/build-infra/actions/sync-branches@main
+        with:
+          app-id: ${{ secrets.OAI_SPEC_PUBLISHER_APPID }}
+          private-key: ${{ secrets.OAI_SPEC_PUBLISHER_PRIVATE_KEY }}
+          head: main
+          base: dev
