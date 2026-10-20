@@ -1,0 +1,24 @@
+name: sync-dev-to-vX.Y-dev
+
+# Create PRs to update active version-development branches with shared changes
+# from dev, then merge each PR after its required checks pass.
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch: {}
+
+jobs:
+  sync-branches:
+    if: github.repository == 'OAI/sig-security'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Synchronize version branches with dev
+        uses: OAI/build-infra/actions/sync-branches@main
+        with:
+          app-id: ${{ secrets.OAI_SPEC_PUBLISHER_APPID }}
+          private-key: ${{ secrets.OAI_SPEC_PUBLISHER_PRIVATE_KEY }}
+          head: dev
+          base-pattern: '^v[0-9]+\.[0-9]+-dev$'
+          auto-merge: true
