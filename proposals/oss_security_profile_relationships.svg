@@ -1,0 +1,101 @@
+<svg width="100%" viewBox="0 0 680 600" role="img" xmlns="http://www.w3.org/2000/svg" font-family="anthropic-sans, -apple-system, 'system-ui', 'Segoe UI', sans-serif">
+<title>Relationship between the OpenAPI Security Specification, Security Profiles, Ecosystem Registry and an OpenAPI Description Document</title>
+<desc>A layered stack. The OpenAPI Specification references the OpenAPI Security Specification (OSS). A Security Profile builds on the OSS, an Ecosystem Registry entry tailors a Security Profile, and an OpenAPI Description Document extends the Ecosystem Registry entry. Optionally, the OpenAPI Description Document can extend a Security Profile or the OSS directly, shown with dotted lines.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M2 1L8 5L2 9" fill="none" stroke="rgb(137,135,129)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Relationships (solid = builds on, dotted = optional direct extension) -->
+<g stroke="rgb(137,135,129)" stroke-width="1" fill="none">
+<line x1="230" y1="76" x2="230" y2="118" marker-end="url(#arrow)"/>
+<line x1="230" y1="230" x2="230" y2="182" marker-end="url(#arrow)"/>
+<line x1="230" y1="342" x2="230" y2="294" marker-end="url(#arrow)"/>
+<line x1="230" y1="454" x2="230" y2="406" marker-end="url(#arrow)"/>
+
+<path d="M80 486 H52 V150 H78" stroke-dasharray="2 3" marker-end="url(#arrow)"/>
+<line x1="52" y1="262" x2="78" y2="262" stroke-dasharray="2 3" marker-end="url(#arrow)"/>
+
+<line x1="380" y1="150" x2="420" y2="150"/>
+<line x1="380" y1="262" x2="420" y2="262"/>
+<line x1="380" y1="374" x2="420" y2="374"/>
+<line x1="380" y1="486" x2="420" y2="486"/>
+</g>
+
+<!-- Relationship labels -->
+<g font-size="12" fill="rgb(82,81,78)" dominant-baseline="central">
+<text x="242" y="97">references</text>
+<text x="242" y="206">builds on</text>
+<text x="242" y="318">tailors</text>
+<text x="242" y="430">extends</text>
+<text transform="translate(40 318) rotate(-90)" text-anchor="middle">or extends directly</text>
+</g>
+
+<!-- OpenAPI Specification -->
+<g>
+<rect x="80" y="24" width="300" height="52" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="230" y="43" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">OpenAPI Specification</text>
+<text x="230" y="61" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">Core specification</text>
+</g>
+
+<!-- OSS -->
+<g>
+<rect x="80" y="118" width="300" height="64" rx="8" stroke-width="0.5" fill="rgb(225,245,238)" stroke="rgb(15,110,86)"/>
+<text x="230" y="141" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(8,80,65)">OpenAPI Security Specification</text>
+<text x="230" y="160" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(15,110,86)">Standardized API Feature · Security SIG</text>
+</g>
+
+<!-- Security Profile Framework -->
+<g>
+<rect x="80" y="230" width="300" height="64" rx="8" stroke-width="0.5" fill="rgb(238,237,254)" stroke="rgb(83,74,183)"/>
+<text x="230" y="253" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(60,52,137)">Security Profile Framework</text>
+<text x="230" y="272" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(83,74,183)">Maintained by the Security Profile</text>
+</g>
+
+<!-- Ecosystem Registry -->
+<g>
+<rect x="80" y="342" width="300" height="64" rx="8" stroke-width="0.5" fill="rgb(250,238,218)" stroke="rgb(133,79,11)"/>
+<text x="230" y="365" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(99,56,6)">Ecosystem Registry</text>
+<text x="230" y="384" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(133,79,11)">Maintained by the Ecosystem Team</text>
+</g>
+
+<!-- OpenAPI Description Document -->
+<g>
+<rect x="80" y="454" width="300" height="64" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="230" y="477" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">OpenAPI Description Document</text>
+<text x="230" y="496" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">Standards Owner or Implementer</text>
+</g>
+
+<!-- Examples -->
+<g>
+<rect x="420" y="118" width="220" height="64" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="530" y="141" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">RFC-based objects</text>
+<text x="530" y="160" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">Discovery, MTLS, JWT, PAR …</text>
+</g>
+<g>
+<rect x="420" y="230" width="220" height="64" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="530" y="253" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">FAPI 2.0</text>
+<text x="530" y="272" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">FAPI 1.0 Advanced</text>
+</g>
+<g>
+<rect x="420" y="342" width="220" height="64" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="530" y="365" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">Local FAPI 2.0 profiles</text>
+<text x="530" y="384" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">Brazil, KSA, UAE, UK</text>
+</g>
+<g>
+<rect x="420" y="454" width="220" height="64" rx="8" stroke-width="0.5" fill="rgb(241,239,232)" stroke="rgb(95,94,90)"/>
+<text x="530" y="477" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="rgb(68,68,65)">Security requirements</text>
+<text x="530" y="496" text-anchor="middle" dominant-baseline="central" font-size="12" fill="rgb(95,94,90)">for each API Operation</text>
+</g>
+
+<!-- Legend -->
+<g stroke="rgb(137,135,129)" stroke-width="1" fill="none">
+<line x1="150" y1="566" x2="186" y2="566" marker-end="url(#arrow)"/>
+<line x1="330" y1="566" x2="366" y2="566" stroke-dasharray="2 3" marker-end="url(#arrow)"/>
+</g>
+<g font-size="12" fill="rgb(82,81,78)" dominant-baseline="central">
+<text x="196" y="566">Depends on</text>
+<text x="376" y="566">Optional direct extension</text>
+</g>
+</svg>
