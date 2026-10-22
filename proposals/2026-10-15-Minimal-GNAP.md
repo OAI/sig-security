@@ -69,7 +69,7 @@ components:
       type: gnap
     gnapStatic:
       type: gnap
-      gnapAsUri: https://as.example.com/grant
+      gnapAsUri: https://as.example.com/tx
 security:
 - gnapDynamic: []   # Default is fully dynamic.
 paths:
@@ -84,18 +84,30 @@ paths:
     - gnapStatic: [read]
 ```
 
-Fully dynamic discovery can be either
+Dynamic discovery can be either
 [Resource Server-first](https://www.rfc-editor.org/info/rfc9635/#section-9.1)
 (RS-first), which is defined by the GNAP RFC, or an extension process.
 As no extension processes are yet defined, they are outside the scope
 of this proposal.
 
 With RS-first usage, a request to a protected resource results in
-a `401 Unauthorized` response with a `WWW-Authenticate` that at least
-includes the `as_uri` parameter that provides the grant request endpoint.
-Such a response MAY also include `access` and `referrer` parameters
-that, together with `as_uri`, provide everything needed to request
-authorization.
+a `401 Unauthorized` response with a `WWW-Authenticate` header
+requesting the `GNAP` authorization scheme.
+
+A fully dynamic configuration would rely on the optional `as_uri`
+and `access` parameters being present in `WWW-Authenticate`,
+providing everything needed to request authorization (note the
+dynamically generated access reference string):
+
+```http
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: GNAP as_uri=https://as.example.com/tx;access=FWWIKYBQ6U56NL1
+```
+
+Alternatively, either or both of those parameters could be missing,
+requiring them to be present in the Security Scheme (`as_uri`, as
+the `gnapAsUri` field) or Security Requirement (`access`, as the
+entry in the array value as shown above)).
 
 It is possible for a request using statically configuerd GNAP
 information to fail with a new `WWW-Authenticate` challenge, in which
